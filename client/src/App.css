@@ -1,0 +1,96 @@
+/* ==========================================================================
+   CodeVigil AI — Application Layout & Component Styles
+   ========================================================================== */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.app-main {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Editor Section (Left / Center) */
+.editor-section {
+  flex: 1.35;
+  min-width: 450px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.editor-wrapper {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Sidebar Section (Right) */
+.sidebar-section {
+  flex: 1;
+  min-width: 380px;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+/* Monaco Line Highlight Decoration */
+.monaco-line-highlight-target {
+  background: rgba(99, 102, 241, 0.22) !important;
+  border-left: 3px solid var(--accent-primary) !important;
+}
+
+.monaco-glyph-issue {
+  background: var(--status-critical);
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+/* Slide in animation for toasts and popups */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .app-main {
+    flex-direction: column;
+  }
+
+  .editor-section {
+    flex: 1.2;
+    min-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .sidebar-section {
+    flex: 1;
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
